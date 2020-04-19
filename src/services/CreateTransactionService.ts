@@ -28,9 +28,9 @@ class CreateTransactionService {
 
     if (!categoryDB) {
       categoryDB = categoryRepository.create({ title: category });
-
-      await categoryRepository.save(categoryDB);
     }
+
+    await categoryRepository.save(categoryDB);
 
     const { total } = await transactionRepository.getBalance();
 
